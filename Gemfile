@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'clearance'
-gem 'semantic-ui-rails'
+gem 'semantic-ui-sass'
 
 
 group :development, :test do
@@ -26,6 +26,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.6'
+  gem 'letter-opener'
 end
 
 group :development do

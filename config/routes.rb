@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   constraints Clearance::Constraints::SignedIn.new do 
     root to: 'dashboards#show'
   end
-  root to: "homes#show"
+  root to: "static_pages#home"
+
+  get 'about' => 'static_pages#about', as: 'about'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
