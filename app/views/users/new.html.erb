@@ -12,7 +12,19 @@
       <%= form.password_field :password %>
     </div>
 
-
+    <% if @user.errors.any? %>
+      <div class='ui red message'>
+        <p class='header'>Please fix the following error(s):</p>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li>
+              <%= msg %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
     <div class="submit-field field">
       <%= form.submit class: 'ui button' %>
     </div>

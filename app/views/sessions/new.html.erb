@@ -12,9 +12,18 @@
       <%= form.password_field :password %>
     </div>
 
+    <div id="flash" class='field'>
+      <% flash.each do |key, value| -%>
+        <div id="flash_<%= key %>" class='ui red message'><%=h value %></div>
+      <% end %>
+    </div>
+
+    <!-- ui error message -->
+
     <div class="submit-field field">
       <%= form.submit class: "ui button" %>
     </div>
+
 
     <div class="other-links">
       <p><%= link_to t(".Forgot Your Password?"), new_password_path %>
