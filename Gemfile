@@ -19,6 +19,7 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'clearance'
 gem 'semantic-ui-sass'
+gem "letter_opener", :group => :development
 
 
 group :development, :test do
