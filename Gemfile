@@ -19,7 +19,8 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'clearance'
 gem 'semantic-ui-sass'
-gem "letter_opener", :group => :development
+gem 'rest-client'
+
 
 
 group :development, :test do
