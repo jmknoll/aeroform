@@ -17,9 +17,9 @@
           <%= link_to 'About', about_path, class: "item" %>
           <div class='right item'>
             <% if signed_in? -%>
-              <%= link_to "Sign Out", sign_out_path, method: :delete, class: "ui unverted button" %>
+              <%= link_to "Sign Out", sign_out_path, method: :delete, class: "ui inverted button" %>
             <% else -%>
-              <%= link_to "Sign In", sign_in_path, class: "ui inverted button" %>
+              <%= link_to "Sign Up", sign_up_path, class: "ui inverted button" %>
             <% end -%>
           </div>
         </div>

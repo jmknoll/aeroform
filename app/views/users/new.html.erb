@@ -1,24 +1,24 @@
 <div id="clearance" class="sign-up">
   <h2><%= t(".title") %></h2>
 
-  <%= form_for @user do |form| %>
-    <div class="text-field">
+  <%= form_for @user, :html => {:class => 'ui form'} do |form| %>
+    <div class="text-field field">
       <%= form.label :email %>
       <%= form.email_field :email, type: 'email' %>
     </div>
 
-    <div class="password-field">
+    <div class="password-field field">
       <%= form.label :password %>
       <%= form.password_field :password %>
     </div>
 
 
-    <div class="submit-field">
-      <%= form.submit %>
+    <div class="submit-field field">
+      <%= form.submit class: 'ui button' %>
     </div>
 
     <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+      <p>Already have an account? <%= link_to t(".sign_in"), sign_in_path %></p>
     </div>
   <% end %>
 </div>
