@@ -76,22 +76,24 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.perform_deliveries = true
   #config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
 
   config.action_mailer.default_url_options = { :host => 'aeroform.herokuapp.com' }
 
   ActionMailer::Base.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'aeroform.heroku.com',
+    
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'aeroform.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
     :authentication => :plain,
+    :enable_starttls_auto => true
   }
-  ActionMailer::Base.delivery_method = :smtp
 
 
   # Use a different logger for distributed setups.

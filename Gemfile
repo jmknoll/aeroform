@@ -20,6 +20,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'clearance'
 gem 'semantic-ui-sass'
 gem 'rest-client'
+gem 'sendgrid-ruby'
 
 
 
