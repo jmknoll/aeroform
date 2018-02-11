@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get 'about' => 'static_pages#about', as: 'about'
   get 'email_confirmation' => 'static_pages#email_confirmation'
+  
+  post 'generate_api_key' => 'users#generate_api_key'
 
   get 'resend_email_confirmation_form' => 'users#resend_email_confirmation_form'
   post 'resend_email_confirmation' => 'users#resend_email_confirmation'

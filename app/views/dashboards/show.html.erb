@@ -1,2 +1,15 @@
-<h1>This is the main dashboard</h1>
-<p><%= @user.email %></p>
+<h2>This is the main dashboard for <%= current_user.email %></h2>
+
+
+<%= form_for :api_key, :url => {:controller => 'users', :action => 'generate_api_key'}, :html => { :class => 'ui form' } do |form| %>
+    <div class="submit-field field">
+      <% if current_user.api_key.key %>
+        <%= form.submit class: "ui button", value: "Regenerate API Key" %>
+      <% else %>
+        <%= form.submit class: "ui button red", value: "Generate API Key" %>
+      <% end %>
+    </div>    
+<% end %>
+
+
+<%= current_user.api_key.key %>
