@@ -1,3 +1,3 @@
-<p>Please click the following link to confirm your email</p>
-<p><%= @user.email %></p>
-<p><%= @user.email_confirmation_token %></p>
+<p>Thank you for registering with Aeroform. We look forward to helping you automate your email servicing.</p>
+<p>Please follow the link below to confirm your email and start using Aeroform today:</p>
+<p><a href='http://aeroform.herokuapp.com/confirm_email/<%= @user.email_confirmation_token %>'>Confirm Email!</a></p>

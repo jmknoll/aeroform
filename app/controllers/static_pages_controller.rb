@@ -5,5 +5,9 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def email_confirmation
+    @user = current_user
+  end
   
 end

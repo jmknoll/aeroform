@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   root to: "static_pages#home"
 
   get 'about' => 'static_pages#about', as: 'about'
+  get 'email_confirmation' => 'static_pages#email_confirmation'
+
+  get 'resend_email_confirmation_form' => 'users#resend_email_confirmation_form'
+  post 'resend_email_confirmation' => 'users#resend_email_confirmation'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]

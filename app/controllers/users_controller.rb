@@ -21,10 +21,21 @@ class UsersController < Clearance::UsersController
     end
   end
 
+  def resend_email_confirmation_form
+  end
+
+  def resend_email_confirmation
+    print('running the resend email confirmation method')
+    print(params)
+    @user = User.find_by(email: params[:user][:email])
+    print(@user)
+    UserMailer.registration_confirmation(@user).deliver_later
+  end
+
   private
 
-  #def url_after_create
-  #  root_path
-  #end
+  def url_after_create
+    email_confirmation_path
+  end
 
 end
