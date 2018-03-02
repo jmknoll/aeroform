@@ -33,4 +33,11 @@ Rails.application.routes.draw do
   get "/sign_up" => "users#new", as: "sign_up"
 
   get "/confirm_email/:token" => "email_confirmations#update", as: "confirm_email"
+
+  namespace :api do
+    namespace :v1 do
+      resources :messages
+    end
+  end
+
 end
