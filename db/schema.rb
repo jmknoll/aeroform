@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(version: 20180302091520) do
     t.index ["user_id"], name: "index_api_keys_on_user_id"
   end
 
-  create_table "form_posts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "forms", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
