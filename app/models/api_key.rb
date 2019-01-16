@@ -1,7 +1,8 @@
-class ApiKey < ApplicationRecord
+
+class ApiKey < ApplicationRecord  
   belongs_to :user
 
   def self.generator
-    SecureRandom.base64.tr('+/=', 'Qrt')
+    SecureRandom.hex(12)
   end
 end
