@@ -3,6 +3,7 @@
 
 <%= form_for :api_key, :url => {:controller => 'users', :action => 'generate_api_key'}, :html => { :class => 'ui form' } do |form| %>
     <div class="submit-field field">
+      
       <% if current_user.api_key.key %>
         <%= form.submit class: "ui button", value: "Regenerate API Key" %>
       <% else %>
