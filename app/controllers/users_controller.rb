@@ -15,8 +15,8 @@ class UsersController < Clearance::UsersController
 
     if @user.save
       UserMailer.registration_confirmation(@user).deliver_later
+      generate_api_key(@user)
       redirect_back_or url_after_create
-      generate_api_key
     else
       render template: "users/new"
     end
