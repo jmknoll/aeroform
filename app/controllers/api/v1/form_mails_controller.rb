@@ -7,15 +7,18 @@ class Api::V1::FormMailsController < Api::ApiController
     @user =  User.joins(:api_key).find_by(api_keys: {key: params[:api_key]})
     if !@user
       render json: {message: "User not found. Please check that your API key is valid."}, status: 401
+      return
     end
 
     @form_mail = FormMail.new(form_mail_params)
     @form_mail.user = @user
     if @form_mail.save
       send_form_email(params[:data])
-      #render json: {message: "Message sent succesfully"}, status: 200
+      render json: {message: "Message sent succesfully"}, status: 200
+      return
     else
       render json: {errors: @form_mail.errors.full_messages}, status: 422
+      return
     end
 
   end
