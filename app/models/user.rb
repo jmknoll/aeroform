@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_one :api_key
 
   has_many :messages
+  has_many :form_mails
 
   def confirm_email
     self.email_confirmed_at = Time.current
