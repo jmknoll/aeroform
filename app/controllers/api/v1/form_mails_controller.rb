@@ -12,7 +12,7 @@ class Api::V1::FormMailsController < Api::ApiController
     @form_mail = FormMail.new(form_mail_params)
     @form_mail.user = @user
     if @form_mail.save
-      #send_email
+      send_form_email(params[:data])
     else
       render json: {errors: @form_mail.errors.full_messages}, status: 422
     end
@@ -23,6 +23,10 @@ class Api::V1::FormMailsController < Api::ApiController
 
   def form_mail_params
     params.require(:data).permit(:body, :recipient)
+  end
+
+  def send_form_email(data)
+    FormMailer.form_email(data).deliver_now
   end
 
 
