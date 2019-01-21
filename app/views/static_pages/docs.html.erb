@@ -1,8 +1,12 @@
 <div class='container'>
   <h2>Documentation</h2>
-  <p>Aeroform was designed to be as simple to use as possible. Just send a POST request with your API key and your email data (recipient, body, and an optional subject line), and your info will be converted into an email and sent to you.
-  <div class='ui segment'>
-    <p>POST request to `http://www.aeroform.xyz/api/v1/formdata`</p>
-  </div>
-  <p>Please feel free to contact me with any questions or concerns.</p>
+  <p>Aeroform was designed to be as simple to use as possible. Simply tell your form to POST your email data (subject, body, and recipient) along with your api key, and it will be converted into an email and sent to you.</p>
+
+  <p>Title is optional, and will default to a friendly "New Form Data!" if not specified. All other fields are required. An example post should look something like this:
+
+  <pre class='highlight'>
+    <%= syntax_highlight(File.read(Rails.root + "public/example.html")) %>
+  </pre>
+  <p><%= link_to 'View or generate API key', root_path %></p>
+  <p>Please feel free to <%= mail_to "aeroform_customer_server@jmknoll.33mail.com", "contact me"%> with any questions or concerns.</p>
 </div>

@@ -26,7 +26,7 @@ class Api::V1::FormMailsController < Api::ApiController
   private
 
   def form_mail_params
-    params.require(:data).permit(:body, :recipient)
+    params.require(:data).permit(:body, :recipient. :subject)
   end
 
   def send_form_email(data)
