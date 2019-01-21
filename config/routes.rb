@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root to: "static_pages#home"
 
   get 'about' => 'static_pages#about', as: 'about'
+  get 'docs' => 'static_pages#docs', as: 'docs'
   get 'email_confirmation' => 'static_pages#email_confirmation'
   
   post 'generate_api_key' => 'users#generate_api_key'

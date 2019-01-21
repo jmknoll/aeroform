@@ -21,6 +21,8 @@ gem 'clearance'
 gem 'semantic-ui-sass'
 gem 'rest-client'
 gem 'sendgrid-ruby'
+gem 'redcarpet'
+gem 'rouge'
 
 
 
