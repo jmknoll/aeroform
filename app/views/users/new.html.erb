@@ -1,4 +1,5 @@
 <div id="clearance" class="sign-up">
+<div class='ui container'>
   <h2><%= t(".title") %></h2>
 
   <%= form_for @user, :html => {:class => 'ui form'} do |form| %>
@@ -33,4 +34,5 @@
       <p>Already have an account? <%= link_to t(".sign_in"), sign_in_path %></p>
     </div>
   <% end %>
+</div>
 </div>

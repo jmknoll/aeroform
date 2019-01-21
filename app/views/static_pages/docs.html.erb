@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='ui container'>
   <h2>Documentation</h2>
   <p>Aeroform was designed to be as simple to use as possible. Simply tell your form to POST your email data (subject, body, and recipient) along with your api key, and it will be converted into an email and sent to you.</p>
 
@@ -7,6 +7,8 @@
   <pre class='highlight'>
     <%= syntax_highlight(File.read(Rails.root + "public/example.html")) %>
   </pre>
-  <p><%= link_to 'View or generate API key', root_path %></p>
+  <% if current_user %>
+    <p><%= link_to 'View or generate API key', root_path %></p>
+  <% end %>
   <p>Please feel free to <%= mail_to "aeroform_service@jmknoll.33mail.com", "contact me"%> with any questions or concerns.</p>
 </div>
