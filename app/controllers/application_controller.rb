@@ -10,8 +10,12 @@ class ApplicationController < ActionController::Base
       a.key = ApiKey.generator
       a.user = user
     end
-    if api_key.save!
-      render template: "dashboards/show"
+    if api_key.save! 
+      if current_user
+        render template: "dashboards/show"
+      else
+        return
+      end
     end
   end
 end
