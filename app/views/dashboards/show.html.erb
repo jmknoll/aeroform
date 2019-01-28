@@ -6,7 +6,7 @@
     <div class="submit-field field">
       
       <% if current_user.api_key.key %>
-        <%= form.submit class: "ui button", value: "Regenerate API Key" %>
+        <%= form.submit class: "ui button primary", value: "Regenerate API Key" %>
       <% else %>
         <%= form.submit class: "ui button red", value: "Generate API Key" %>
       <% end %>

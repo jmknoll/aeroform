@@ -16,3 +16,19 @@
 
 
 @import "semantic-ui";
+
+.navbar {
+  background-color: #00494c !important;
+}
+
+.ui.secondary.inverted.pointing.menu {
+  border: none !important;
+}
+
+.ui.primary.button {
+  background-color: #00494c !important;
+}
+
+.ui.primary.button.large {
+  padding: 15px 35px;
+}

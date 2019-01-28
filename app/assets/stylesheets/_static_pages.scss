@@ -2,16 +2,66 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .banner {
+  //border: 1px solid red;
+  
+  //background-position: center top;
+  //background-repeat: no-repeat;
+  /*
   background-image: image-url("banner.png");
-  background-size: 100% auto;
+  background-size: auto 100%;
   background-position: center top;
   background-repeat: no-repeat;
-  height: 1000px;
+  height: 80vh;
   position: relative;
+  */
 }
 
+.subtitle {
+  margin-bottom: 30px;
+}
+
+
 .text-wrapper {
-  position: absolute;
+  //position: absolute;
   padding: 100px 70px;
+  //border: 1px solid blue;
+  background-image: image-url("Whiteboard@2x.png");
+  background-size: auto 100%;
+  background-position: right center;
+  background-repeat: no-repeat;
+
+  .image-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    img {
+      max-height: 300px;
+    }
+  }
+
+  .button {
+    margin-top: 30px;
+  }
+}
+
+.intro-section {
+  background-color: #F2F3F5 !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  
+  .row {
+    background-color: #F2F3F5;
+  }
+
+  .column {
+    background-color: #F2F3F5;    
+  }
+
+  img {
+    width: 70px;
+  }
 }
