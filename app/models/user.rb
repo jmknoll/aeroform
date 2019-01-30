@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :password, length: { minimum: 8 }, :on => :create
 
-  has_one :api_key
+  has_one :api_key, dependent: :destroy
 
   has_many :messages
   has_many :form_mails, dependent: :destroy

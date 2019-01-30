@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
       a.user = user
     end
     if api_key.save! 
+      puts('user')
+      puts(current_user.to_yaml)
+      puts('key')
+      puts(api_key.to_yaml)
       if current_user
         render template: "dashboards/show"
       else
